@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="pglog">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="pglog">
+  <title>Pglog::StatementExecution - pglog HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pglog
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pglog/Pglog" data-name="pglog">
+      <a href="../Pglog.html">Pglog</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pglog/Pglog/Connection" data-name="pglog::connection">
+      <a href="../Pglog/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/Disconnection" data-name="pglog::disconnection">
+      <a href="../Pglog/Disconnection.html">Disconnection</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/EventHandler" data-name="pglog::eventhandler">
+      <a href="../Pglog/EventHandler.html">EventHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/ExecutionError" data-name="pglog::executionerror">
+      <a href="../Pglog/ExecutionError.html">ExecutionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/Raw" data-name="pglog::raw">
+      <a href="../Pglog/Raw.html">Raw</a>
+      
+    </li>
+  
+  <li class="parent " data-id="pglog/Pglog/Reader" data-name="pglog::reader">
+      <a href="../Pglog/Reader.html">Reader</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pglog/Pglog/Reader/Normaliser" data-name="pglog::reader::normaliser">
+      <a href="../Pglog/Reader/Normaliser.html">Normaliser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="pglog/Pglog/StatementExecution" data-name="pglog::statementexecution">
+      <a href="../Pglog/StatementExecution.html">StatementExecution</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/TimeSpanConverter" data-name="pglog::timespanconverter">
+      <a href="../Pglog/TimeSpanConverter.html">TimeSpanConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Pglog::StatementExecution
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Pglog/StatementExecution.html">Pglog::StatementExecution</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L6" target="_blank">
+        pglog/statement_execution.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(raw:Raw,sql:String?=nil)-class-method" class="signature"><strong>.new</strong>(raw : Raw, sql : String? = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#sql_to_id(sql:String):String-class-method" class="signature"><strong>.sql_to_id</strong>(sql : String) : String</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#bind_parameters:String?-instance-method" class="signature"><strong>#bind_parameters</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bind_parameters=(bind_parameters:String?)-instance-method" class="signature"><strong>#bind_parameters=</strong>(bind_parameters : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#database_name:String-instance-method" class="signature"><strong>#database_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#database_name=(database_name:String)-instance-method" class="signature"><strong>#database_name=</strong>(database_name : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error:ExecutionError?-instance-method" class="signature"><strong>#error</strong> : ExecutionError?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error=(error:ExecutionError?)-instance-method" class="signature"><strong>#error=</strong>(error : ExecutionError?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_fetch:Bool-instance-method" class="signature"><strong>#execute_fetch</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_fetch=(execute_fetch:Bool)-instance-method" class="signature"><strong>#execute_fetch=</strong>(execute_fetch : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id=(id:String)-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log_time:Time-instance-method" class="signature"><strong>#log_time</strong> : Time</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log_time=(log_time:Time)-instance-method" class="signature"><strong>#log_time=</strong>(log_time : Time)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_fetch:Int32-instance-method" class="signature"><strong>#n_fetch</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#n_fetch=(n_fetch:Int32)-instance-method" class="signature"><strong>#n_fetch=</strong>(n_fetch : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session_id:String-instance-method" class="signature"><strong>#session_id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session_id=(session_id:String)-instance-method" class="signature"><strong>#session_id=</strong>(session_id : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_bind(raw:Raw)-instance-method" class="signature"><strong>#set_bind</strong>(raw : Raw)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sql:String-instance-method" class="signature"><strong>#sql</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sql=(sql:String)-instance-method" class="signature"><strong>#sql=</strong>(sql : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_bind_usec:Int32-instance-method" class="signature"><strong>#time_bind_usec</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_bind_usec=(time_bind_usec:Int32)-instance-method" class="signature"><strong>#time_bind_usec=</strong>(time_bind_usec : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_exec_usec:Int64-instance-method" class="signature"><strong>#time_exec_usec</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_exec_usec=(time_exec_usec:Int64)-instance-method" class="signature"><strong>#time_exec_usec=</strong>(time_exec_usec : Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_fetch_usec:Int64-instance-method" class="signature"><strong>#time_fetch_usec</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_fetch_usec=(time_fetch_usec:Int64)-instance-method" class="signature"><strong>#time_fetch_usec=</strong>(time_fetch_usec : Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_parse_usec:Int32-instance-method" class="signature"><strong>#time_parse_usec</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#time_parse_usec=(time_parse_usec:Int32)-instance-method" class="signature"><strong>#time_parse_usec=</strong>(time_parse_usec : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transaction_id:Int64-instance-method" class="signature"><strong>#transaction_id</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transaction_id=(transaction_id:Int64)-instance-method" class="signature"><strong>#transaction_id=</strong>(transaction_id : Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_name:String-instance-method" class="signature"><strong>#user_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_name=(user_name:String)-instance-method" class="signature"><strong>#user_name=</strong>(user_name : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(raw:Raw,sql:String?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(raw : <a href="../Pglog/Raw.html">Raw</a>, sql : String? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new(raw:Raw,sql:String?=nil)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="sql_to_id(sql:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>sql_to_id</strong>(sql : String) : String
+
+        <a class="method-permalink" href="#sql_to_id(sql:String):String-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="bind_parameters:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>bind_parameters</strong> : String?
+
+        <a class="method-permalink" href="#bind_parameters:String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bind_parameters=(bind_parameters:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>bind_parameters=</strong>(bind_parameters : String?)
+
+        <a class="method-permalink" href="#bind_parameters=(bind_parameters:String?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="database_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>database_name</strong> : String
+
+        <a class="method-permalink" href="#database_name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="database_name=(database_name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>database_name=</strong>(database_name : String)
+
+        <a class="method-permalink" href="#database_name=(database_name:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error:ExecutionError?-instance-method">
+      <div class="signature">
+        
+        def <strong>error</strong> : <a href="../Pglog/ExecutionError.html">ExecutionError</a>?
+
+        <a class="method-permalink" href="#error:ExecutionError?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error=(error:ExecutionError?)-instance-method">
+      <div class="signature">
+        
+        def <strong>error=</strong>(error : <a href="../Pglog/ExecutionError.html">ExecutionError</a>?)
+
+        <a class="method-permalink" href="#error=(error:ExecutionError?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_fetch:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_fetch</strong> : Bool
+
+        <a class="method-permalink" href="#execute_fetch:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_fetch=(execute_fetch:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_fetch=</strong>(execute_fetch : Bool)
+
+        <a class="method-permalink" href="#execute_fetch=(execute_fetch:Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String
+
+        <a class="method-permalink" href="#id:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : String)
+
+        <a class="method-permalink" href="#id=(id:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_time:Time-instance-method">
+      <div class="signature">
+        
+        def <strong>log_time</strong> : Time
+
+        <a class="method-permalink" href="#log_time:Time-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_time=(log_time:Time)-instance-method">
+      <div class="signature">
+        
+        def <strong>log_time=</strong>(log_time : Time)
+
+        <a class="method-permalink" href="#log_time=(log_time:Time)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_fetch:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>n_fetch</strong> : Int32
+
+        <a class="method-permalink" href="#n_fetch:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="n_fetch=(n_fetch:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>n_fetch=</strong>(n_fetch : Int32)
+
+        <a class="method-permalink" href="#n_fetch=(n_fetch:Int32)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>session_id</strong> : String
+
+        <a class="method-permalink" href="#session_id:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session_id=(session_id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>session_id=</strong>(session_id : String)
+
+        <a class="method-permalink" href="#session_id=(session_id:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_bind(raw:Raw)-instance-method">
+      <div class="signature">
+        
+        def <strong>set_bind</strong>(raw : <a href="../Pglog/Raw.html">Raw</a>)
+
+        <a class="method-permalink" href="#set_bind(raw:Raw)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sql</strong> : String
+
+        <a class="method-permalink" href="#sql:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sql=(sql:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>sql=</strong>(sql : String)
+
+        <a class="method-permalink" href="#sql=(sql:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_bind_usec:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>time_bind_usec</strong> : Int32
+
+        <a class="method-permalink" href="#time_bind_usec:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_bind_usec=(time_bind_usec:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_bind_usec=</strong>(time_bind_usec : Int32)
+
+        <a class="method-permalink" href="#time_bind_usec=(time_bind_usec:Int32)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_exec_usec:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>time_exec_usec</strong> : Int64
+
+        <a class="method-permalink" href="#time_exec_usec:Int64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_exec_usec=(time_exec_usec:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_exec_usec=</strong>(time_exec_usec : Int64)
+
+        <a class="method-permalink" href="#time_exec_usec=(time_exec_usec:Int64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_fetch_usec:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>time_fetch_usec</strong> : Int64
+
+        <a class="method-permalink" href="#time_fetch_usec:Int64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_fetch_usec=(time_fetch_usec:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_fetch_usec=</strong>(time_fetch_usec : Int64)
+
+        <a class="method-permalink" href="#time_fetch_usec=(time_fetch_usec:Int64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_parse_usec:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>time_parse_usec</strong> : Int32
+
+        <a class="method-permalink" href="#time_parse_usec:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="time_parse_usec=(time_parse_usec:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>time_parse_usec=</strong>(time_parse_usec : Int32)
+
+        <a class="method-permalink" href="#time_parse_usec=(time_parse_usec:Int32)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transaction_id:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>transaction_id</strong> : Int64
+
+        <a class="method-permalink" href="#transaction_id:Int64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transaction_id=(transaction_id:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>transaction_id=</strong>(transaction_id : Int64)
+
+        <a class="method-permalink" href="#transaction_id=(transaction_id:Int64)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>user_name</strong> : String
+
+        <a class="method-permalink" href="#user_name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_name=(user_name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>user_name=</strong>(user_name : String)
+
+        <a class="method-permalink" href="#user_name=(user_name:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/statement_execution.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="crystal_docs.project_name" content="pglog">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="pglog">
+  <title>Pglog::EventHandler - pglog HEAD</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          pglog
+        </a>
+      </h1>
+
+      <span class="project-version">
+        HEAD
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="pglog/Pglog" data-name="pglog">
+      <a href="../Pglog.html">Pglog</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pglog/Pglog/Connection" data-name="pglog::connection">
+      <a href="../Pglog/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/Disconnection" data-name="pglog::disconnection">
+      <a href="../Pglog/Disconnection.html">Disconnection</a>
+      
+    </li>
+  
+  <li class=" current" data-id="pglog/Pglog/EventHandler" data-name="pglog::eventhandler">
+      <a href="../Pglog/EventHandler.html">EventHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/ExecutionError" data-name="pglog::executionerror">
+      <a href="../Pglog/ExecutionError.html">ExecutionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/Raw" data-name="pglog::raw">
+      <a href="../Pglog/Raw.html">Raw</a>
+      
+    </li>
+  
+  <li class="parent " data-id="pglog/Pglog/Reader" data-name="pglog::reader">
+      <a href="../Pglog/Reader.html">Reader</a>
+      
+        <ul>
+  
+  <li class=" " data-id="pglog/Pglog/Reader/Normaliser" data-name="pglog::reader::normaliser">
+      <a href="../Pglog/Reader/Normaliser.html">Normaliser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/StatementExecution" data-name="pglog::statementexecution">
+      <a href="../Pglog/StatementExecution.html">StatementExecution</a>
+      
+    </li>
+  
+  <li class=" " data-id="pglog/Pglog/TimeSpanConverter" data-name="pglog::timespanconverter">
+      <a href="../Pglog/TimeSpanConverter.html">TimeSpanConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract class</span> Pglog::EventHandler
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Pglog/EventHandler.html">Pglog::EventHandler</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/event_handler.cr#L2" target="_blank">
+        pglog/event_handler.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#before_row(raw:Raw):Bool-instance-method" class="signature"><strong>#before_row</strong>(raw : Raw) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_connect(connection:Connection)-instance-method" class="signature"><strong>#on_connect</strong>(connection : Connection)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_disconnect(disconnection:Disconnection)-instance-method" class="signature"><strong>#on_disconnect</strong>(disconnection : Disconnection)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_statement(statement:StatementExecution)-instance-method" class="signature"><strong>#on_statement</strong>(statement : StatementExecution)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="before_row(raw:Raw):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>before_row</strong>(raw : <a href="../Pglog/Raw.html">Raw</a>) : Bool
+
+        <a class="method-permalink" href="#before_row(raw:Raw):Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/event_handler.cr#L3" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_connect(connection:Connection)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_connect</strong>(connection : <a href="../Pglog/Connection.html">Connection</a>)
+
+        <a class="method-permalink" href="#on_connect(connection:Connection)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/event_handler.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_disconnect(disconnection:Disconnection)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_disconnect</strong>(disconnection : <a href="../Pglog/Disconnection.html">Disconnection</a>)
+
+        <a class="method-permalink" href="#on_disconnect(disconnection:Disconnection)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/event_handler.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_statement(statement:StatementExecution)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_statement</strong>(statement : <a href="../Pglog/StatementExecution.html">StatementExecution</a>)
+
+        <a class="method-permalink" href="#on_statement(statement:StatementExecution)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/horrendo/pglog/blob/b1e15117f776bf11d3f55f38bd115d43679bb6ca/src/pglog/event_handler.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
