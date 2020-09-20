@@ -197,6 +197,45 @@ describe Pglog do
       csv.close
     end
 
+    it "correctly processes a statement split across files in a single session" do
+      handler = MySimpleEventHandler.new
+      reader = Pglog::Reader.new(handler)
+      csv = File.new("#{__DIR__}/csv/p-b-e-1.csv")
+      reader.read(csv)
+      csv.close
+      handler.statements.size.should eq(0)
+      csv = File.new("#{__DIR__}/csv/p-b-e-2.csv")
+      reader.rows_read.should eq(2)
+      reader.read(csv)
+      handler.statements.size.should eq(1)
+      handler.statements[0].time_parse_usec.should eq(412)
+      handler.statements[0].time_bind_usec.should eq(108)
+      handler.statements[0].time_exec_usec.should eq(15905)
+      reader.rows_read.should eq(4)
+      csv.close
+    end
+
+    it "correctly processes a statement split across files in two sessions" do
+      handler = MySimpleEventHandler.new
+      reader = Pglog::Reader.new(handler)
+      csv = File.new("#{__DIR__}/csv/p-b-e-1.csv")
+      reader.read(csv)
+      csv.close
+      handler.statements.size.should eq(0)
+      reader_s = reader.to_json
+      reader_2 = Pglog::Reader.from_json(reader_s)
+      reader_2.handler = handler
+      csv = File.new("#{__DIR__}/csv/p-b-e-2.csv")
+      reader.rows_read.should eq(2)
+      reader.read(csv)
+      handler.statements.size.should eq(1)
+      handler.statements[0].time_parse_usec.should eq(412)
+      handler.statements[0].time_bind_usec.should eq(108)
+      handler.statements[0].time_exec_usec.should eq(15905)
+      reader.rows_read.should eq(4)
+      csv.close
+    end
+
     it "correctly serializes and deserializes a reader" do
       csv = File.new("#{__DIR__}/csv/serialize.csv")
       handler = MySimpleEventHandler.new
