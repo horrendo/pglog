@@ -1,0 +1,19 @@
+2020-05-02 05:21:13.497 UTC,,,2774,"172.22.0.1:42084",5ead0349.ad6,1,"",2020-05-02 05:21:13 UTC,,0,LOG,00000,"connection received: host=172.22.0.1 port=42084",,,,,,,,,""
+2020-05-02 05:21:13.534 UTC,,,2775,"172.22.0.1:42088",5ead0349.ad7,1,"",2020-05-02 05:21:13 UTC,,0,LOG,00000,"connection received: host=172.22.0.1 port=42088",,,,,,,,,""
+2020-05-02 05:21:13.506 UTC,"b2bc_api","b2bc_dev",2774,"172.22.0.1:42084",5ead0349.ad6,2,"authentication",2020-05-02 05:21:13 UTC,3/3713,0,LOG,00000,"connection authorized: user=b2bc_api database=b2bc_dev",,,,,,,,,""
+2020-05-02 05:21:13.695 UTC,"b2bc_api","b2bc_dev",2774,"172.22.0.1:42084",5ead0349.ad6,31,"PARSE",2020-05-02 05:21:13 UTC,3/3717,0,LOG,00000,"duration: 0.412 ms  parse <unnamed>: 
+        insert
+        into    public.request(
+                    id, correlation_id, direction, method, url_address, request_headers,
+                    response_headers, request_body, response_body, response_status_code, ok,
+                    execution_ms, db_ms, tx_id, session_id_transaction
+                )
+        values  ($1, $2, $3, $4, $5, $6, $7, $8, nullif($9, '')::jsonb, $10, $11, $12, $13, $14, $15)",,,,,,,,,""
+2020-05-02 05:21:13.695 UTC,"b2bc_api","b2bc_dev",2774,"172.22.0.1:42084",5ead0349.ad6,32,"BIND",2020-05-02 05:21:13 UTC,3/3717,0,LOG,00000,"duration: 0.108 ms  bind <unnamed>: 
+        insert
+        into    public.request(
+                    id, correlation_id, direction, method, url_address, request_headers,
+                    response_headers, request_body, response_body, response_status_code, ok,
+                    execution_ms, db_ms, tx_id, session_id_transaction
+                )
+        values  ($1, $2, $3, $4, $5, $6, $7, $8, nullif($9, '')::jsonb, $10, $11, $12, $13, $14, $15)","parameters: $1 = '9f8ef906-0ccd-4cee-9872-6a0a10a15a42', $2 = '23d73440-a876-4b04-87ad-ea6e42b8687c', $3 = 'incoming', $4 = 'get', $5 = '/v2/buyers/173ab737-d1bf-4825-be65-cda57799ac29', $6 = 'blah', $7 = 'hello', $8 = 'world', $9 = 'dilroy', $10 = '200', $11 = 't', $12 = '123', $13 = '57', $14 = '2149', $15 = '5ead0349.ad6'",,,,,,,,""

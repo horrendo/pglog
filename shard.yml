@@ -1,0 +1,16 @@
+name: pglog
+version: 0.1.0
+description: A log file processor for Postgres csv logs
+
+authors:
+  - Steve Baldwin <steve.baldwin@gmail.com>
+
+crystal: 0.35.1
+
+dependencies:
+  pg_sql_lexer:
+    github: horrendo/pg_sql_lexer
+  pg:
+    github: will/crystal-pg
+
+license: MIT

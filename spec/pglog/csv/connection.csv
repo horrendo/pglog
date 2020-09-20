@@ -1,0 +1,6 @@
+2020-05-02 05:01:58.409 UTC,,,34,,5eacfec6.22,1,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"ending log output to stderr",,"Future log output will go to log destination ""csvlog"".",,,,,,,""
+2020-05-02 05:01:58.413 UTC,,,36,,5eacfec6.24,1,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"database system was shut down at 2020-05-02 05:01:57 UTC",,,,,,,,,""
+2020-05-02 05:01:58.417 UTC,,,34,,5eacfec6.22,2,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"database system is ready to accept connections",,,,,,,,,""
+2020-05-02 05:01:58.444 UTC,,,44,"[local]",5eacfec6.2c,1,"",2020-05-02 05:01:58 UTC,,0,LOG,00000,"connection received: host=[local]",,,,,,,,,""
+2020-05-02 05:01:58.445 UTC,"b2bc","postgres",44,"[local]",5eacfec6.2c,2,"authentication",2020-05-02 05:01:58 UTC,3/1,0,LOG,00000,"connection authorized: user=b2bc database=postgres application_name=psql",,,,,,,,,""
+2020-05-02 05:01:58.597 UTC,"b2bc","postgres",44,"[local]",5eacfec6.2c,5,"idle",2020-05-02 05:01:58 UTC,,0,LOG,00000,"disconnection: session time: 0:00:00.153 user=b2bc database=postgres host=[local]",,,,,,,,,"psql"

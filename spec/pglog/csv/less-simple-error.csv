@@ -1,0 +1,2 @@
+2020-05-09 06:16:36.990 UTC,"b2bc_owner","b2bc_dev",48291,"172.27.0.1:55496",5eb63eae.bca3,15,"idle",2020-05-09 05:25:02 UTC,3/4454,0,LOG,00000,"statement: select cause_error();",,,,,,,,,"psql"
+2020-05-09 06:16:36.990 UTC,"b2bc_owner","b2bc_dev",48291,"172.27.0.1:55496",5eb63eae.bca3,16,"SELECT",2020-05-09 05:25:02 UTC,3/4454,0,ERROR,42P01,"relation ""x"" does not exist",,,"select x          from x",24,"PL/pgSQL function cause_error() line 1 at SQL statement","select cause_error();",,,"psql"

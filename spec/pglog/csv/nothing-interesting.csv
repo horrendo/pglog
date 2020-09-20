@@ -1,0 +1,3 @@
+2020-05-02 05:01:58.409 UTC,,,34,,5eacfec6.22,1,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"ending log output to stderr",,"Future log output will go to log destination ""csvlog"".",,,,,,,""
+2020-05-02 05:01:58.413 UTC,,,36,,5eacfec6.24,1,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"database system was shut down at 2020-05-02 05:01:57 UTC",,,,,,,,,""
+2020-05-02 05:01:58.417 UTC,,,34,,5eacfec6.22,2,,2020-05-02 05:01:58 UTC,,0,LOG,00000,"database system is ready to accept connections",,,,,,,,,""

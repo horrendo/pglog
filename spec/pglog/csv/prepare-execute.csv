@@ -1,0 +1,42 @@
+2020-09-15 20:42:05.960 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,7,"idle",2020-09-15 20:38:06 UTC,3/8997,0,LOG,00000,"statement: deallocate all;",,,,,,,,,"psql"
+2020-09-15 20:42:05.960 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,8,"DEALLOCATE ALL",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 0.229 ms",,,,,,,,,"psql"
+2020-09-15 20:42:16.694 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,9,"idle",2020-09-15 20:38:06 UTC,3/8998,0,LOG,00000,"statement: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,,"psql"
+2020-09-15 20:42:16.694 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,10,"PREPARE",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 0.221 ms",,,,,,,,,"psql"
+2020-09-15 20:42:35.503 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,11,"idle",2020-09-15 20:38:06 UTC,3/8999,0,LOG,00000,"statement: execute c('buyer', 'text', 5);","prepare: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-15 20:42:35.504 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,12,"EXECUTE",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 1.289 ms",,,,,,,,,"psql"
+2020-09-15 20:42:47.846 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,13,"idle",2020-09-15 20:38:06 UTC,3/9000,0,LOG,00000,"statement: execute c('seller', 'integer', 8);","prepare: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-15 20:42:47.847 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,14,"EXECUTE",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 0.783 ms",,,,,,,,,"psql"
+2020-09-15 20:42:59.649 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,15,"idle",2020-09-15 20:38:06 UTC,3/9001,0,LOG,00000,"statement: select count(*) from pg_attribute;",,,,,,,,,"psql"
+2020-09-15 20:42:59.651 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,16,"SELECT",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 1.684 ms",,,,,,,,,"psql"
+2020-09-15 20:43:15.546 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,17,"idle",2020-09-15 20:38:06 UTC,3/9002,0,LOG,00000,"statement: execute c('invoice', 'integer', 2);","prepare: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-15 20:43:15.547 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,18,"EXECUTE",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 1.861 ms",,,,,,,,,"psql"
+2020-09-15 20:43:35.613 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,19,"idle",2020-09-15 20:38:06 UTC,3/9003,0,LOG,00000,"statement: select count(*) from pg_class;",,,,,,,,,"psql"
+2020-09-15 20:43:35.615 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,20,"SELECT",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 1.822 ms",,,,,,,,,"psql"
+2020-09-15 20:43:41.896 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,21,"idle",2020-09-15 20:38:06 UTC,3/9004,0,LOG,00000,"statement: execute
+c
+(
+'buyer',
+'text', 5
+)
+;","prepare: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-15 20:43:41.896 UTC,"b2bc_owner","b2bc_dev",37864,"192.168.80.1:37536",5f61262e.93e8,22,"EXECUTE",2020-09-15 20:38:06 UTC,3/0,0,LOG,00000,"duration: 0.769 ms",,,,,,,,,"psql"
+2020-09-19 22:40:17.772 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,90,"idle",2020-09-17 21:46:10 UTC,3/3598,0,LOG,00000,"statement: execute c(substr('buyerx', 1, 5), 'te' || 'x' || 't', '12345'::int);","prepare: prepare c(text, text, int) as select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-19 22:40:17.775 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,91,"EXECUTE",2020-09-17 21:46:10 UTC,3/0,0,LOG,00000,"duration: 2.951 ms",,,,,,,,,"psql"
+2020-09-19 23:09:26.167 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,95,"PREPARE",2020-09-17 21:46:10 UTC,3/0,0,LOG,00000,"duration: 0.203 ms",,,,,,,,,"psql"
+2020-09-19 23:09:39.648 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,96,"idle",2020-09-17 21:46:10 UTC,3/3601,0,LOG,00000,"statement: execute c(substr('buyerx', 1, 5), 'te' || 'x' || 't', '12345'::int);","prepare: prepare c
+(
+text,
+text, int
+) as
+select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-19 23:09:39.649 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,97,"EXECUTE",2020-09-17 21:46:10 UTC,3/0,0,LOG,00000,"duration: 0.748 ms",,,,,,,,,"psql"
+2020-09-19 23:10:39.645 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,98,"idle",2020-09-17 21:46:10 UTC,3/3602,0,LOG,00000,"statement: execute c(
+substr('buyerx', 1, 5),
+'te' || 'x' || 't',
+'12345'::int);","prepare: prepare c
+(
+text,
+text, int
+) as
+select count(*) from pg_attribute where attrelid = $1::regclass and atttypid = $2::regtype and attnum > $3;",,,,,,,,"psql"
+2020-09-19 23:10:39.645 UTC,"b2bc_owner","b2bc_dev",6108,"172.21.0.1:36050",5f63d922.17dc,99,"EXECUTE",2020-09-17 21:46:10 UTC,3/0,0,LOG,00000,"duration: 0.751 ms",,,,,,,,,"psql"

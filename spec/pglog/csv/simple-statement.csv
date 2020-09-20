@@ -1,0 +1,2 @@
+2020-05-03 05:44:16.886 UTC,"b2bc_owner","b2bc_dev",50093,"172.22.0.1:42128",5eae5991.c3ad,5,"idle",2020-05-03 05:41:37 UTC,3/8242,1234,LOG,00000,"statement: select count(*) from invoice;",,,,,,,,,"psql"
+2020-05-03 05:44:16.892 UTC,"b2bc_owner","b2bc_dev",50093,"172.22.0.1:42128",5eae5991.c3ad,6,"SELECT",2020-05-03 05:41:37 UTC,3/0,0,LOG,00000,"duration: 6.047 ms",,,,,,,,,"psql"

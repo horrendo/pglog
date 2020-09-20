@@ -1,0 +1,2 @@
+2020-05-09 05:25:15.351 UTC,"b2bc_owner","b2bc_dev",48291,"172.27.0.1:55496",5eb63eae.bca3,3,"idle",2020-05-09 05:25:02 UTC,3/4448,0,LOG,00000,"statement: select x;",,,,,,,,,"psql"
+2020-05-09 05:25:15.351 UTC,"b2bc_owner","b2bc_dev",48291,"172.27.0.1:55496",5eb63eae.bca3,4,"SELECT",2020-05-09 05:25:02 UTC,3/4448,0,ERROR,42703,"column ""x"" does not exist",,,,,,"select x;",8,,"psql"
